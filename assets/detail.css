@@ -1,0 +1,89 @@
+body {
+	padding-top: 4.5rem;
+}
+
+.container .body {
+	padding-top: 40px;
+}
+
+.navbar {
+	background-color: #28a745 !important;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+	font-family: 'Roboto Condensed';
+	height: 70px;
+}
+
+.navbar-brand {
+	font-family: 'Raleway';
+}
+
+.nav-link {
+	color: white !important;
+}
+
+.login {
+	width: 85px;
+	background-color: white;
+	font-family: 'Open Sans';
+	color: #28a745;
+	box-shadow: 0 2px 0 #2e6d2e;
+}
+
+.login:hover {
+	color: #2e6d2e;
+}
+
+
+.detail p {
+	font-family: 'Open Sans';
+	font-size: 20px;
+	color: #28a745;
+}
+
+.detail p strong {
+	color: #343a40;
+}
+
+.gambar img {
+	max-width: 440px;
+
+}
+
+.img-detail {
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	object-fit: cover;
+}
+
+.bawah {
+	padding-top: 200px;
+	padding-bottom: 200px;
+	border: solid 1px;
+}
+
+td {
+	color: green;
+}
+
+#map {
+	height: 500px;
+}
+
+.con-map {
+	padding-bottom: 50px;
+}
+
+.navbar-brand {
+	font-family: 'Raleway';
+}
+
+footer {
+	padding-top: 30px;
+	padding-left: 100px;
+	background-color: #28a745;
+	color: white;
+	text-align: left;
+	font-size: 2rem;
+	padding-bottom: 20px;
+}

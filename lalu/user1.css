@@ -1,0 +1,72 @@
+body {
+    padding-top: 3.5rem;
+
+}
+
+.jumbotron {
+    text-align: Left;
+    color: white;
+}
+
+.background {
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(0, 0, 0, 0.3), 
+          rgba(0, 0, 0, 0.3)
+        ),
+        /* bottom, image */
+        url(img/kampung_baduy.jpg);
+    background-size: cover;
+}
+
+.jumbotron h1 {
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-family:'Open Sans';
+}
+
+.jumbotron p {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+ul.nav {
+    font-family:'Arvo';
+    font-size:14px;
+}
+
+.homepage {
+    text-align: center;
+}
+
+.homepage h2 {
+    font-family: 'Open Sans';
+    font-size: 30px;
+    color: rgb(46, 51, 66);
+}
+
+.homepage h3 {
+    font-family: 'Open Sans';
+    font-size: 25px;
+    color: rgb(46, 51, 66);
+}
+
+.homepage p {
+    font-family: 'Open Sans';
+    font-size: 20px;
+    color: rgb(46, 51, 66);
+    
+}
+
+.user {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+hr {
+    width: 300px;
+    border-top: 3px solid #000000;
+}

@@ -1,0 +1,123 @@
+body {
+	padding-top: 3.5rem;
+}
+
+.navbar {
+	background-color: #28a745 !important;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+	font-family: 'Roboto Condensed';
+	height: 70px;
+	width: 100%
+}
+
+.navbar-brand {
+	font-family: 'Raleway';
+}
+
+.nav-link {
+	color: white !important;
+}
+
+.login {
+	width: 85px;
+	background-color: white;
+	font-family: 'Open Sans';
+	color: #28a745;
+	box-shadow: 0 2px 0 #2e6d2e;
+}
+
+.login:hover {
+	color: #2e6d2e;
+}
+
+.background {
+	background:
+		/* top, transparent black, faked with gradient */
+		linear-gradient(rgba(0, 0, 0, 0.3),
+		rgba(0, 0, 0, 0.3)),
+		/* bottom, image */
+		url(img/bg_baduy.jpg);
+	background-size: cover;
+}
+
+
+.jumbotron {
+	padding: 175px;
+	text-shadow: 1px 2px 5px #000000;
+	font-size: 23px;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	margin-bottom: 0px;
+
+
+}
+
+.isi p {
+	font-family: 'Open Sans';
+	font-size: 15px;
+	text-align: justify;
+}
+
+.isi .gambar {
+	width: 655px;
+}
+
+.judul-fitur h1 {
+	font-size: 50px;
+	font-family: 'Raleway';
+}
+
+.card {
+	border: 0;
+	border-radius: 0;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+	height: 150px;
+	font-family: 'Roboto';
+}
+
+.card .oi {
+	font-size: 80px;
+	color: #28a745;
+}
+
+.card h1 {
+	font-family: 'Roboto';
+}
+
+.card h5 {
+	font-family: 'Raleway';
+	font-size: 25px;
+	color: #2e6d2e;
+}
+
+.profil {
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+}
+
+.profil h1,
+h3 {
+	font-family: 'Open Sans';
+	color: #4e5d74
+}
+
+.profil p {
+	text-align: center;
+}
+
+.profil img {
+	width: 200px;
+}
+
+footer {
+	padding-top: 30px;
+	padding-left: 100px;
+	background-color: #28a745;
+	color: white;
+	text-align: left;
+	font-size: 2rem;
+}

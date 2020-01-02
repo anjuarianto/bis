@@ -1,0 +1,82 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+	padding-top: 4.5rem;
+}
+
+.navbar {
+	background-color: #28a745 !important;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+	font-family: 'Roboto Condensed';
+	height: 70px;
+}
+
+.navbar-brand {
+	font-family: 'Raleway';
+}
+
+.nav-link {
+	color: white !important;
+}
+
+.login {
+	width: 85px;
+	background-color: white;
+	font-family: 'Open Sans';
+	color: #28a745;
+	box-shadow: 0 2px 0 #2e6d2e;
+}
+
+.login:hover {
+	color: #2e6d2e;
+}
+
+
+.background {
+	background:
+		/* top, transparent black, faked with gradient */
+		linear-gradient(rgba(0, 0, 0, 0.3),
+		rgba(0, 0, 0, 0.3)),
+		/* bottom, image */
+		url(img/bg_baduy.jpg);
+	background-size: cover;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 0px;
+	margin-top: 20px;
+}
+
+.card:hover {
+	background: #FFF;
+	box-shadow: 0 5px 8px #666;
+}
+
+.img-canvas {
+	width: 100%;
+	height: 180px;
+	overflow: hidden;
+	text-align: center;
+	object-fit: cover;
+}
+
+.card-body {
+	color: black;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.page-item.active .page-link {
+	background-color: #28a745;
+	border-color: #28a745
+}
+
+.page-item .page-link {
+	color: #28a745
+}
+
+.card {
+	height: 300px;
+}
