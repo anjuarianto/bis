@@ -20,17 +20,14 @@
         <p class="profile-name-card"></p>
         <?= validation_errors() ?>
         <form action="<?=base_url();?>index.php/user/save" method="post" class="form-signin">
+            <input class="form-control" name="nama" type="text" required placeholder="Type Your Username" autofocus id="inputEmail" />
             <input class="form-control" name="username" type="text" required placeholder="Type Your Username" autofocus id="inputEmail" />
             <input class="form-control" name="password" type="password" required placeholder="Type Your Password" id="password" />
             <input class="form-control" name="validation_password" type="password" required placeholder="Retype Your Password" id="confirm_password" />
-            <div class="checkbox">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" />Remember me</label>
-                </div>
-            </div>
+            <div class="mt-5"></div>
             <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign Up</button>
             <a class="btn btn-primary btn-block btn-lg back btn-signin " href="<?=base_url();?>">Back</a>
+            <div class="text-center text-danger mt-4"><?=$this->session->flashdata('error')?></div>
         </form>
         </div>
 </body>

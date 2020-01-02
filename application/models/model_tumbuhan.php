@@ -13,11 +13,10 @@ class Model_tumbuhan extends CI_Model {
     }
 
     public function detail($id) {
-		$hasil = $this->db->select('tu.*, ta.*')
-						  ->from('tumbuhan as tu, taksonomi as ta')
-						  ->where('tu.id_taksonomi=ta.id')
+		$hasil = $this->db->select('*')
+						  ->from('tumbuhan')
+						  ->where('id', $id)
 						  ->limit(1)
-						  ->where('tu.id', $id)
 						  ->get();
 
 		if($hasil->num_rows() > 0){

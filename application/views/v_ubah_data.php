@@ -1,21 +1,25 @@
 <?php
 	$id 			= $tumbuhan->id;
 if($this->input->post('is_submitted')){
-    $nama_latin			= set_value('nama_latin');
-    $nama_daerah        = set_value('nama_daerah');
-    $family             = set_value('family');
-    $habitat            = set_value('habitat');
-    $perawakan          = set_value('perawakan');
-    $potensi            = set_value('potensi');
+    $nama_ilmiah		= set_value('nama_ilmiah');
+    $nama_lokal			= set_value('nama_lokal');
+    $family				= set_value('family');
+    $fungsi_utama		= set_value('fungsi_utama');
+    $fungsi_pendukung	= set_value('fungsi_pendukung');
+    $penyakit			= set_value('penyakit');
+    $bagian_tumbuhan	= set_value('bagian_tumbuhan');
+    $cara_pengolahan	= set_value('cara_pengolahan');
     
 } else {
 	
-	$nama_latin     = $tumbuhan->nama_latin;
-    $nama_daerah    = $tumbuhan->nama_daerah;
-    $family         = $tumbuhan->family;
-    $habitat        = $tumbuhan->habitat;
-    $perawakan      = $tumbuhan->perawakan;
-    $potensi        = $tumbuhan->potensi;
+	$nama_ilmiah		= $tumbuhan->nama_ilmiah;
+    $nama_lokal			= $tumbuhan->nama_lokal;
+    $family         	= $tumbuhan->family;
+    $fungsi_utama 		= $tumbuhan->fungsi_utama;
+    $fungsi_pendukung 	= $tumbuhan->fungsi_pendukung;
+	$penyakit			= $tumbuhan->penyakit;
+	$bagian_tumbuhan	= $tumbuhan->bagian_tumbuhan;
+	$cara_pengolahan 	= $tumbuhan->cara_pengolahan;
 }
 ?>
 
@@ -43,16 +47,16 @@ if($this->input->post('is_submitted')){
 				<?= form_open_multipart('admin/ubah/'.$tumbuhan->id, ['class'=>'form-horizontal']) ?>
 					
 					  <div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">Nama Latin</label>
+						<label for="inputEmail3" class="col-sm-2 control-label">Nama Ilmiah</label>
 						<div class="col-sm-10">
-						  <input type="text" class="form-control" name="nama_latin" placeholder="" value="<?=$tumbuhan->nama_latin?>">
+						  <input type="text" class="form-control" name="nama_ilmiah" placeholder="" value="<?=$tumbuhan->nama_ilmiah?>">
 						</div>
 					  </div>
 
                       <div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">Nama Daerah</label>
+						<label for="inputEmail3" class="col-sm-2 control-label">Nama Lokal</label>
 						<div class="col-sm-10">
-						  <input type="text" class="form-control" name="nama_daerah" placeholder="" value="<?=$tumbuhan->nama_daerah?>">
+						  <input type="text" class="form-control" name="nama_lokal" placeholder="" value="<?=$tumbuhan->nama_lokal?>">
 						</div>
 					  </div>
 
@@ -64,23 +68,37 @@ if($this->input->post('is_submitted')){
 					  </div>
 
                       <div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">Habitat</label>
+						<label for="inputEmail3" class="col-sm-2 control-label">Fungsi Utama</label>
 						<div class="col-sm-10">
-						  <input type="text" class="form-control" name="habitat" placeholder="" value="<?=$tumbuhan->habitat?>">
+						  <input type="text" class="form-control" name="fungsi_utama" placeholder="" value="<?=$tumbuhan->fungsi_utama?>">
 						</div>
 					  </div>
 
                       <div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">Perawakan</label>
+						<label for="inputEmail3" class="col-sm-2 control-label">Fungsi Pendukung</label>
 						<div class="col-sm-10">
-						  <input type="text" class="form-control" name="perawakan" placeholder="" value="<?=$tumbuhan->perawakan?>">
+						  <input type="text" class="form-control" name="fungsi_pendukung" placeholder="" value="<?=$tumbuhan->fungsi_pendukung?>">
 						</div>
 					  </div>
 
                       <div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">Potensi</label>
+						<label for="inputEmail3" class="col-sm-2 control-label">Penyakit</label>
 						<div class="col-sm-10">
-						  <input type="text" class="form-control" name="potensi" placeholder="" value="<?= $tumbuhan->potensi ?>">
+						  <input type="text" class="form-control" name="penyakit" placeholder="" value="<?= $tumbuhan->penyakit ?>">
+						</div>
+					  </div>
+
+					  <div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">Bagian Tumbuhan</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" name="bagian_tumbuhan" placeholder="" value="<?= $tumbuhan->bagian_tumbuhan ?>">
+						</div>
+					  </div>
+
+					  <div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">Cara Pengolahan</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" name="cara_pengolahan" placeholder="" value="<?= $tumbuhan->cara_pengolahan ?>">
 						</div>
 					  </div>
 					  

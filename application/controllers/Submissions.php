@@ -7,26 +7,28 @@ class Submissions extends CI_Controller {
 	{
         parent::__construct();
 		$this->load->model('model_submissions');
-		
-	}
 
-	public function index()
-	{
 		if($this->session->userdata('username') == FALSE) {
 			$this->session->set_flashdata('error','*Anda harus login terlebih dahulu');
 			redirect('user/login');
-		} else {
-			$this->load->view('v_submissions');
 		}
+		
+	}
+
+	public function index() {
+		$this->load->view('v_submissions');
 		
     }
     
     public function tambah() {
-		$this->form_validation->set_rules('nama_latin', 'Nama Latin', 'required');
-		$this->form_validation->set_rules('nama_daerah', 'Nama Daerah', 'required');
-		$this->form_validation->set_rules('habitat', 'Habitat', 'required');
-		$this->form_validation->set_rules('perawakan', 'Perawakan', 'required');		
-		$this->form_validation->set_rules('potensi', 'Potensi', 'required');		
+		$this->form_validation->set_rules('nama_ilmiah', 'Nama Ilmiah', 'required');
+		$this->form_validation->set_rules('nama_lokal', 'Nama Lokal', 'required');
+		$this->form_validation->set_rules('family', 'Family', 'required');
+		$this->form_validation->set_rules('fungsi_utama', 'Fungsi Utama', 'required');		
+		$this->form_validation->set_rules('fungsi_pendukung', 'Fungsi Pendukung', 'required');	
+		$this->form_validation->set_rules('penyakit', 'Penyakit', 'required');
+		$this->form_validation->set_rules('bagian_tumbuhan', 'Bagian Tumbuhan', 'required');
+		$this->form_validation->set_rules('cara_pengolahan', 'Cara Pengolahan', 'required');
 		//$this->form_validation->set_rules('userfile', 'Product Image', 'required');
 
 		if ($this->form_validation->run() == FALSE)
@@ -46,12 +48,16 @@ class Submissions extends CI_Controller {
 			{
 				//file gagal diupload -> kembali ke form tambah
 				$data_tumbuhan = array(
-					'nama_latin'	=> set_value('nama_latin'),
-					'nama_daerah'	=> set_value('nama_daerah'),
-					'habitat'		=> set_value('habitat'),
-					'perawakan'		=> set_value('perawakan'),
-                    'potensi'		=> set_value('potensi'),
-                    'status'        => 'unconfirm'
+					'nama_ilmiah'		=> set_value('nama_ilmiah'),
+					'nama_lokal'		=> set_value('nama_lokal'),
+					'family'			=> set_value('family'),
+					'fungsi_utama'		=> set_value('fungsi_utama'),
+					'fungsi_pendukung'	=> set_value('fungsi_pendukung'),
+					'penyakit'			=> set_value('penyakit'),
+					'bagian_tumbuhan'	=> set_value('bagian_tumbuhan'),
+					'cara_pengolahan'	=> set_value('cara_pengolahan'),
+					'status'        	=> 'unconfirm',
+					'username'			=> $this->session->userdata('username')
 				);
 				
 				$this->model_submissions->tambah($data_tumbuhan);
@@ -61,13 +67,17 @@ class Submissions extends CI_Controller {
 				// eksekusi query INSERT
 				$image = $this->upload->data();
 				$data =	array(
-					'nama_latin'	=> set_value('nama_latin'),
-					'nama_daerah'	=> set_value('nama_daerah'),
-					'habitat'		=> set_value('habitat'),
-					'perawakan'		=> set_value('perawakan'),
-					'potensi'		=> set_value('potensi'),
-                    'gambar'		=> $image['file_name'],
-                    'status'        => 'unconfirm'
+					'nama_ilmiah'		=> set_value('nama_ilmiah'),
+					'nama_lokal'		=> set_value('nama_lokal'),
+					'family'			=> set_value('family'),
+					'fungsi_utama'		=> set_value('fungsi_utama'),
+					'fungsi_pendukung'	=> set_value('fungsi_pendukung'),
+					'penyakit'			=> set_value('penyakit'),
+					'bagian_tumbuhan'	=> set_value('bagian_tumbuhan'),
+					'cara_pengolahan'	=> set_value('cara_pengolahan'),
+                    'gambar'			=> base_url().'assets/img/gambar/'.$image['file_name'],
+					'status'        	=> 'unconfirm',
+					'username'			=> $this->session->userdata('username')
 				);
 
 				$this->model_submissions->tambah($data);

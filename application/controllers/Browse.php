@@ -43,9 +43,6 @@ class Browse extends CI_Controller {
 		$data['pagination'] =  $this->pagination->create_links();
 		$data['message'] = "";
 		$this->load->view('v_browse', $data);
-
-	
-		
 	}
 
 	public function detail($id) {
@@ -54,15 +51,27 @@ class Browse extends CI_Controller {
 		$this->load->view('detail', $data);
 	}
 
-	public function search()
+	public function search($search_keyword = null)
     {
-		$keyword = $this->input->post('keyword');
+		if($search_keyword === null) {
+			redirect(base_url().'index.php/browse/search/'.$this->input->post('keyword'));
+		
+		}
+		$keyword = $this->uri->segment('3');
 		$this->load->library('pagination');
 
-		$config['base_url'] = 'http://localhost/bis/index.php/browse/search';
-		$config['total_rows'] = $this->db->get('tumbuhan')->num_rows();
 		$config['per_page'] = 12;
 		$config['num_links'] = 2;
+
+		$config['base_url'] = 'http://localhost/bis/index.php/browse/search/'.$keyword;
+		$config['total_rows'] = $data['tumbuhan'] = $this->db->or_like(array('nama_lokal' => $keyword, 'nama_ilmiah' => $keyword))
+									 ->get('tumbuhan')->num_rows();
+
+		
+
+		// print($config['total_rows']);
+		// die;
+		
 		
 		$config['full_tag_open'] = '<ul class="pagination justify-content-end" style="padding-top:40px;">';
 		$config['full_tag_close'] = '</ul>';
@@ -84,8 +93,9 @@ class Browse extends CI_Controller {
 
 		$this->pagination->initialize($config);
 
-		$data['tumbuhan'] = $this->db->or_like(array('nama_daerah' => $keyword, 'nama_latin' => $keyword))
-									 ->get('tumbuhan', $config['per_page'], $this->uri->segment(3))->result();
+		$data['tumbuhan'] = $this->db->or_like(array('nama_lokal' => $keyword, 'nama_ilmiah' => $keyword))
+									 ->get('tumbuhan', $config['per_page'], $this->uri->segment(4))->result();
+		
 
 		$data['pagination'] =  $this->pagination->create_links();
 		$data['message'] = "";

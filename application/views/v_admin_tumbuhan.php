@@ -44,10 +44,14 @@
                 <tr>
                   <th>#</th>
                   <th>Nama Ilmiah</th>
-                  <th>Nama Daerah</th>
+                  <th>Nama Lokal</th>
+                  <th>Family</th>
+                  <th>Fungsi Utama</th>
+                  <th>Fungsi Pendukung</th>
+                  <th>Penyakit</th>
+                  <th>Bagian Tumbuhan</th>
+                  <th>Cara Pengolahan Utama</th>
                   <th>Gambar</th>
-                  <th>Habitat</th>
-                  <th>Potensi</th>
                   <th>
                     <?=anchor(	'admin/tambah',
                             'Tambah Data', 
@@ -60,16 +64,20 @@
                 <?php foreach($tumbuhan as $t) : ?>
                 <tr>
                   <td><?=$t->id?></td>
-                  <td><?=$t->nama_latin?></td>
-                  <td><?=$t->nama_daerah?></td>
+                  <td><?=$t->nama_ilmiah?></td>
+                  <td><?=$t->nama_lokal?></td>
+                  <td><?=$t->family?></td>
+                  <td><?=$t->fungsi_utama?></td>
+                  <td><?=$t->fungsi_pendukung?></td>
+                  <td><?=$t->penyakit?></td>
+                  <td><?=$t->bagian_tumbuhan?></td>
+                  <td><?=$t->cara_pengolahan?></td>
                   <td><?php
-                    $image = [	'src'	=> 'assets/img/gambar/' . $t->gambar,
+                    $image = [	'src'	=> $t->gambar,
                               'height'	=> '100'
                               ];
                     echo img($image)
                   ?></td>
-                  <td><?=$t->habitat?></td>
-                  <td><?=$t->potensi?></td>
                   <td>
                     <div class="tombol-aksi">
                     <?=anchor(	'admin/ubah/'.$t->id,

@@ -47,18 +47,29 @@ class User extends CI_Controller {
 
     public function save() {
 
-            $this->load->model('model_user');
-            $username = $this->input->post('username');
-            $password = $this->input->post('password');
-            
+        $this->load->model('model_user');
+        $nama = $this->input->post('nama');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        $cek_username = $this->model_user->check_username($username);
+
+        if($cek_username == true) {
+            $this->session->set_flashdata('error','Username Sudah Ada!');
+            redirect('user/register');
+        } else {
             $data = array(
-                    'username' => $username,
-                    'password' => $password,
-                    'level'    => '2'
-                );
+                'nama'     => $nama,
+                'username' => $username,
+                'password' => $password,
+                'level'    => '2'
+            );
+    
+            $this->model_user->tambah_user($data);
+            redirect('user/login');
+        }
         
-                $this->model_user->tambah_user($data);
-                redirect('user/login');
+        
        
     }
        

@@ -33,48 +33,36 @@
 			<div class="row">
 				<div class="col">
 					
-					<h1 class="display-4"><?=$detail->nama_latin?></h1>
+					<h1 class="display-4"><?=$detail->nama_ilmiah?></h1>
 					<hr class="my-4">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-5">
-					<img class="img-detail" src="<?=base_url();?>assets/img/gambar/<?=$detail->gambar;?>" alt="">
+					<img class="img-detail" src="<?=$detail->gambar;?>" alt="">
 				</div>
 				<div class="col-md-7 detail">
 					<div class="container">
 
-						<p><strong>Nama Daerah</strong> : <?=$detail->nama_daerah?></p>
+						<p><strong>Nama Lokal</strong> : <?=$detail->nama_lokal?></p>
 						<hr>
 
-						<p><strong>Habitat</strong> : <?=$detail->habitat?> dan lain lainnya</p>
+						<p><strong>Family</strong> : <?=$detail->family?></p>
 						<hr>
 
-						<p><strong>Perawakan</strong> : <?=$detail->perawakan?></p>
+						<p><strong>Fungsi Utama</strong> : <?=$detail->fungsi_utama?></p>
 						<hr>
 
-						<p><strong>Potensi</strong> : <?=$detail->potensi?></p>
+						<p><strong>Fungsi Pendukung</strong> : <?=$detail->fungsi_pendukung?></p>
 						<hr>
-					</div>
 
-					<div class= "container" style="padding-top:30px;padding-bottom:30px">
-					<h1 class="display-4">Klasifikasi</h1>
-					<table class="table table-bordered">
-						<thead>
-							<th>Filum</th>
-							<th>Kelas</th>
-							<th>Ordo</th>
-							<th>Family</th>
-							<th>Genus</th>
-						</thead>
-						<tbody>
-						<td><?=$detail->filum?></td>
-						<td><?=$detail->kelas?></td>
-						<td><?=$detail->ordo?></td>
-						<td><?=$detail->family?></td>
-						<td><?=$detail->genus?></td>
-						</tbody>						
-					</table>
+						<p><strong>Penyakit yang dapat diobati</strong> : <?=$detail->penyakit?></p>
+						<hr>
+
+						<p><strong>Bagian Tumbuhan</strong> : <?=$detail->penyakit?></p>
+						<hr>
+
+						<p><strong>Cara Pengolahan</strong> : <?=$detail->penyakit?></p>
 					</div>
 					
 				</div>			

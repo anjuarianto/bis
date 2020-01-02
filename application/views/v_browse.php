@@ -32,7 +32,7 @@
    <!-- Container -->
       <div class="container card-view">
 
-      <form action="<?=base_url();?>index.php/browse/search" method="post">
+      <form action="<?=base_url();?>index.php/browse/search/" method="post">
       <div class="input-group pt-3">
          <input type="text" class="form-control" name="keyword" placeholder="Kata kunci..." aria-label="Recipient's username" aria-describedby="button-addon2">
          <div class="input-group-append" >
@@ -42,16 +42,17 @@
       </form>
       
       
+      
          <div class="row">
             <?php foreach($tumbuhan as $t ) : ?>
 
             <div class="col-md-3" >
                <a href="<?=base_url();?>index.php/browse/detail/<?=$t->id;?>">
                   <div class="card">
-                     <img class="img-canvas img-thumbnail" src="<?=base_url();?>assets/img/gambar/<?=$t->gambar;?>" alt="Card image cap">
+                     <img class="img-canvas img-thumbnail" src="<?=$t->gambar;?>" alt="Card image cap">
                      <div class="card-body">
-                        <p class="card-title"><strong><?=$t->nama_daerah?></strong></p>
-                        <p class="card-text"><?=$t->nama_latin?></p>
+                        <p class="card-title"><strong><?=$t->nama_lokal?></strong></p>
+                        <p class="card-text"><?=$t->nama_ilmiah?></p>
                      </div>
                   </div>
                </a>
@@ -61,9 +62,6 @@
          </div>
        
        <?php echo $pagination; ?>
-       <div style="padding-top: 50px; text-align:center;">
-   
-       </div>
        
       
          
@@ -71,8 +69,11 @@
       
    </main>
 
-   <footer class="container">
-      <p>&copy; Company 2017-2018</p>
+   <footer id="footer">
+      <div class="container">
+         <p>&copy; Company 2017-2018</p>
+      </div>
+      
    </footer>
 
    <!-- Bootstrap core JavaScript

@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('model_tumbuhan');
 		$this->load->model('model_submissions');
-		$this->load->model('model_taxonomy');
+
 		
 	}
 
@@ -68,11 +68,14 @@ class Admin extends CI_Controller {
 		if ($this->session->userdata('level') != 1) {
 			$this->load->view('prohibited_access');
 		} else {
-			$this->form_validation->set_rules('nama_latin', 'Nama Latin', 'required');
-			$this->form_validation->set_rules('nama_daerah', 'Nama Daerah', 'required');
-			$this->form_validation->set_rules('habitat', 'Habitat', 'required');
-			$this->form_validation->set_rules('perawakan', 'Perawakan', 'required');		
-			$this->form_validation->set_rules('potensi', 'Potensi', 'required');		
+			$this->form_validation->set_rules('nama_ilmiah', 'Nama Ilmiah', 'required');
+			$this->form_validation->set_rules('nama_lokal', 'Nama Lokal', 'required');
+			$this->form_validation->set_rules('family', 'Family', 'required');
+			$this->form_validation->set_rules('fungsi_utama', 'Fungsi Utama', 'required');		
+			$this->form_validation->set_rules('fungsi_pendukung', 'Fungsi Pendukung', 'required');	
+			$this->form_validation->set_rules('penyakit', 'Penyakit', 'required');
+			$this->form_validation->set_rules('bagian_tumbuhan', 'Bagian Tumbuhan', 'required');
+			$this->form_validation->set_rules('cara_pengolahan', 'Cara Pengolahan', 'required');
 			//$this->form_validation->set_rules('userfile', 'Product Image', 'required');
 
 			if ($this->form_validation->run() == FALSE)
@@ -92,38 +95,32 @@ class Admin extends CI_Controller {
 				{
 					//file gagal diupload -> kembali ke form tambah
 					$data_tumbuhan =	array(
-						'nama_latin'	=> set_value('nama_latin'),
-						'nama_daerah'	=> set_value('nama_daerah'),
-						'family'		=> set_value('family'),
-						'habitat'		=> set_value('habitat'),
-						'perawakan'		=> set_value('perawakan'),
-						'potensi'		=> set_value('potensi')
-					);
-
-					$data_klasifikasi = array(
-						'filum'		=> set_value('filum'),
-						'kelas'		=> set_value('kelas'),
-						'ordo'		=> set_value('ordo'),
-						'family'	=> set_value('family'),
-						'genus'		=> set_value('genus'),
-						'species'	=> set_value('nama_latin')
+						'nama_ilmiah'		=> set_value('nama_ilmiah'),
+						'nama_lokal'		=> set_value('nama_lokal'),
+						'family'			=> set_value('family'),
+						'fungsi_utama'		=> set_value('fungsi_utama'),
+						'fungsi_pendukung'	=> set_value('fungsi_pendukung'),
+						'penyakit'			=> set_value('penyakit'),
+						'bagian_tumbuhan'	=> set_value('bagian_tumbuhan'),
+						'cara_pengolahan'	=> set_value('cara_pengolahan')
 					);
 					
 					$this->model_tumbuhan->tambah($data_tumbuhan);
-					$this->model_taxonomy->tambah($data_klasifikasi);
 					redirect('admin');
 				} else {
 					//file berhasil diupload -> lanjutkan ke query INSERT
 					// eksekusi query INSERT
 					$image = $this->upload->data();
 					$data =	array(
-						'nama_latin'	=> set_value('nama_latin'),
-						'nama_daerah'	=> set_value('nama_daerah'),
-						'family'		=> set_value('family'),
-						'habitat'		=> set_value('habitat'),
-						'perawakan'		=> set_value('perawakan'),
-						'potensi'		=> set_value('potensi'),
-						'gambar'		=> $image['file_name']
+						'nama_ilmiah'		=> set_value('nama_ilmiah'),
+						'nama_lokal'		=> set_value('nama_lokal'),
+						'family'			=> set_value('family'),
+						'fungsi_utama'		=> set_value('fungsi_utama'),
+						'fungsi_pendukung'	=> set_value('fungsi_pendukung'),
+						'penyakit'			=> set_value('penyakit'),
+						'bagian_tumbuhan'	=> set_value('bagian_tumbuhan'),
+						'cara_pengolahan'	=> set_value('cara_pengolahan'),
+						'gambar'			=> base_url().'assets/img/gambar/'.$image['file_name']
 					);
 
 					$this->model_tumbuhan->tambah($data);
@@ -141,13 +138,15 @@ class Admin extends CI_Controller {
 	public function ubah($id) {
 		if ($this->session->userdata('level') != 1) {
 			$this->load->view('prohibited_access');
-		} else { 
-			$this->form_validation->set_rules('nama_latin', 'Nama Latin', 'required');
-			$this->form_validation->set_rules('nama_daerah', 'Nama Daerah', 'required');
+		} else {
+			$this->form_validation->set_rules('nama_ilmiah', 'Nama Ilmiah', 'required');
+			$this->form_validation->set_rules('nama_lokal', 'Nama Lokal', 'required');
 			$this->form_validation->set_rules('family', 'Family', 'required');
-			$this->form_validation->set_rules('habitat', 'Habitat', 'required');
-			$this->form_validation->set_rules('perawakan', 'Perawakan', 'required');		
-			$this->form_validation->set_rules('potensi', 'Potensi', 'required');		
+			$this->form_validation->set_rules('fungsi_utama', 'Fungsi Utama', 'required');		
+			$this->form_validation->set_rules('fungsi_pendukung', 'Fungsi Pendukung', 'required');	
+			$this->form_validation->set_rules('penyakit', 'Penyakit', 'required');
+			$this->form_validation->set_rules('bagian_tumbuhan', 'Bagian Tumbuhan', 'required');
+			$this->form_validation->set_rules('cara_pengolahan', 'Cara Pengolahan', 'required');
 			//$this->form_validation->set_rules('userfile', 'Product Image', 'required');
 
 			if ($this->form_validation->run() == FALSE) {
@@ -155,45 +154,66 @@ class Admin extends CI_Controller {
 				$this->load->view('v_ubah_data', $data);
 			} else {
 				if($_FILES['userfile']['name'] != ''){
+					
+
 					//form submit dengan gambar diisi
 					//load uploading file library
-					$config['upload_path'] = './uploads/';
+					$config['upload_path'] = './assets/img/gambar/';
 					$config['allowed_types'] = 'jpg|png';
-					$config['max_size']	= '300'; //KB
-					$config['max_width']  = '2000'; //pixels
-					$config['max_height']  = '2000'; //pixels
+					$config['max_size']	= '30000'; //KB
+					$config['max_width']  = '20000'; //pixels
+					$config['max_height']  = '20000'; //pixels
 
 					$this->load->library('upload', $config);
-				
+
+					$gambar = $this->upload->data();
+					
 					if ( ! $this->upload->do_upload()) {
-						$data['tumbuhan'] = $this->model_tumbuhan->detail($id);
-						$this->load->view('v_ubah_data', $data);
+						$data_tumbuhan = array(
+							'nama_ilmiah'		=> set_value('nama_ilmiah'),
+							'nama_lokal'		=> set_value('nama_lokal'),
+							'family'			=> set_value('family'),
+							'fungsi_utama'		=> set_value('fungsi_utama'),
+							'fungsi_pendukung'	=> set_value('fungsi_pendukung'),
+							'penyakit'			=> set_value('penyakit'),
+							'bagian_tumbuhan'	=> set_value('bagian_tumbuhan'),
+							'cara_pengolahan'	=> set_value('cara_pengolahan')
+						);
+						
+						$this->model_tumbuhan->ubah($id, $data_tumbuhan);
+						redirect('admin');
 					} else {
 						$gambar = $this->upload->data();
 						$data =	array(
-							'nama_latin'	=> set_value('nama_latin'),
-							'nama_daerah'	=> set_value('nama_daerah'),
-							'family'		=> set_value('family'),
-							'habitat'		=> set_value('habitat'),
-							'perawakan'		=> set_value('perawakan'),
-							'potensi'		=> set_value('potensi'),
-							'gambar'		=> $gambar['file_name']
+							'nama_ilmiah'		=> set_value('nama_ilmiah'),
+							'nama_lokal'		=> set_value('nama_lokal'),
+							'family'			=> set_value('family'),
+							'fungsi_utama'		=> set_value('fungsi_utama'),
+							'fungsi_pendukung'	=> set_value('fungsi_pendukung'),
+							'penyakit'			=> set_value('penyakit'),
+							'bagian_tumbuhan'	=> set_value('bagian_tumbuhan'),
+							'cara_pengolahan'	=> set_value('cara_pengolahan'),
+							'gambar'			=> base_url().'assets/img/gambar/'.$gambar['file_name']
 						);
 						$this->model_tumbuhan->ubah($id, $data);
 						redirect('admin');
 					}
 				} else {
 					//form submit dengan gambar dikosongkan
-					$data =	array(
-						'nama_latin'	=> set_value('nama_latin'),
-						'nama_daerah'	=> set_value('nama_daerah'),
-						'family'		=> set_value('family'),
-						'habitat'		=> set_value('habitat'),
-						'perawakan'		=> set_value('perawakan'),
-						'potensi'		=> set_value('potensi')
+					$data_tumbuhan = array(
+						'nama_ilmiah'		=> set_value('nama_ilmiah'),
+						'nama_lokal'		=> set_value('nama_lokal'),
+						'family'			=> set_value('family'),
+						'fungsi_utama'		=> set_value('fungsi_utama'),
+						'fungsi_pendukung'	=> set_value('fungsi_pendukung'),
+						'penyakit'			=> set_value('penyakit'),
+						'bagian_tumbuhan'	=> set_value('bagian_tumbuhan'),
+						'cara_pengolahan'	=> set_value('cara_pengolahan')
 					);
-					$this->model_tumbuhan->ubah($id, $data);
+					
+					$this->model_tumbuhan->ubah($id, $data_tumbuhan);
 					redirect('admin');
+					
 				}
 			}
 		}

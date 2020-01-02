@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
     <link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<?=base_url();?>assets/styles.css" />
     <link rel="stylesheet" href="<?=base_url();?>assets/Google-Style-Login.css" />
+    <link rel="stylesheet" href="<?=base_url();?>assets/loginregister.css" />
 </head>
 
 <body>
-    <div class="login-card"><img src="<?=base_url();?>assets/img/avatar_2x.png" class="profile-img-card" />
+    <div class="login-card"><img src="<?=base_url();?>assets/img/leaf.png" class="profile-img-card" />
         <p class="profile-name-card"> </p>
         <div class="text-center text-danger"><?=$this->session->flashdata('error')?></div>
         <form action="<?=base_url();?>index.php/user/proses" method="post" class="form-signin">
@@ -22,8 +22,8 @@
                         <input type="checkbox"/>Remember me</label>
                 </div>
             </div>
-            <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign in</button>
-            <a class="btn btn-primary btn-block btn-lg back btn-signin " href="<?=base_url();?>">Back</a>
+            <button class="btn login-button btn-primary btn-block btn-lg btn-signin" type="submit">Sign in</button>
+            <a class="btn btn-primary login-button btn-block btn-lg back btn-signin " href="<?=base_url();?>">Back</a>
         </form><a href="<?=base_url();?>index.php/user/register" class="forgot-password">Belum Daftar?</a></div>
         <div><?=validation_errors()?></div>
 </body>

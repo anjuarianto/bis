@@ -19,6 +19,18 @@ class Model_user extends CI_Model {
 		}
 	}
 
+	public function check_username($username) {
+		$query = $this->db->where('username', $username)
+				 		  ->limit(1)
+				 		  ->get('user');
+		
+		if($query->num_rows() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public function tambah_user($data) {
 		$this->db->insert('user', $data);
 	}

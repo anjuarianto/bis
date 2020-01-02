@@ -11,16 +11,13 @@
                <a class="nav-link" href="<?=base_url();?>index.php/browse"><span class="oi oi-magnifying-glass"></span> Explore</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="<?=base_url();?>index.php/taxonomy"><span class="oi oi-magnifying-glass"></span> Taxonomy</a>
-            </li>
-            <li class="nav-item">
                <a class="nav-link" href="<?=base_url();?>index.php/submissions"><span class="oi oi-magnifying-glass"></span> Submissions</a>
             </li>
             <li class="nav-item">
                <a class="nav-link" href=""><span class="oi oi-person"></span> About</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href=""><span class="oi oi-phone"></span> Contact Us</a>
+               <a class="nav-link" href="<?=base_url();?>#footer"><span class="oi oi-phone"></span> Contact Us</a>
             </li>
             
          </ul>

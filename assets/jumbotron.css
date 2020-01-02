@@ -55,11 +55,11 @@ body {
 .isi p {
 	font-family: 'Open Sans';
 	font-size: 15px;
-	text-align: justify;
+	
 }
 
 .isi .gambar {
-	width: 655px;
+	width: 645px;
 }
 
 .judul-fitur h1 {
@@ -119,5 +119,5 @@ footer {
 	background-color: #28a745;
 	color: white;
 	text-align: left;
-	font-size: 2rem;
+	font-size: 14px;
 }

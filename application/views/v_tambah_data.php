@@ -24,37 +24,58 @@
 				<?= form_open_multipart('admin/tambah', ['class'=>'form-horizontal']) ?>
 
 				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-4 control-label">Nama Latin</label>
+					<label for="inputEmail3" class="col-sm-4 control-label">Nama Ilmiah</label>
 					<div class="col-sm-12">
-						<input type="text" class="form-control" name="nama_latin" placeholder="" value="<?= set_value('nama_latin') ?>">
+						<input type="text" class="form-control" name="nama_ilmiah" placeholder="" value="<?= set_value('nama_ilmiah') ?>">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-6 control-label">Nama Daerah</label>
+					<label for="inputEmail3" class="col-sm-6 control-label">Nama Lokal</label>
 					<div class="col-sm-12">
-						<input type="text" class="form-control" name="nama_daerah" placeholder="" value="<?= set_value('nama_daerah') ?>">
+						<input type="text" class="form-control" name="nama_lokal" placeholder="" value="<?= set_value('nama_lokal') ?>">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-4 control-label">Habitat</label>
+					<label for="inputEmail3" class="col-sm-4 control-label">Family</label>
 					<div class="col-sm-12">
-						<input type="text" class="form-control" name="habitat" placeholder="" value="<?= set_value('habitat') ?>">
+						<input type="text" class="form-control" name="family" placeholder="" value="<?= set_value('family') ?>">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-4 control-label">Perawakan</label>
+					<label for="inputEmail3" class="col-sm-4 control-label">Fungsi Utama</label>
 					<div class="col-sm-12">
-						<input type="text" class="form-control" name="perawakan" placeholder="" value="<?= set_value('perawakan') ?>">
+						<input type="text" class="form-control" name="fungsi_utama" placeholder="" value="<?= set_value('fungsi_utama') ?>">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-4 control-label">Potensi</label>
+					<label for="inputEmail3" class="col-sm-4 control-label">Fungsi Pendukung</label>
 					<div class="col-sm-12">
-						<input type="text" class="form-control" name="potensi" placeholder="" value="<?= set_value('potensi') ?>">
+						<input type="text" class="form-control" name="fungsi_pendukung" placeholder="" value="<?= set_value('fungsi_pendukung') ?>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-4 control-label">Penyakit</label>
+					<div class="col-sm-12">
+						<input type="text" class="form-control" name="penyakit" placeholder="" value="<?= set_value('penyakit') ?>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-4 control-label">Bagian Tumbuhan</label>
+					<div class="col-sm-12">
+						<input type="text" class="form-control" name="bagian_tumbuhan" placeholder="" value="<?= set_value('bagian_tumbuhan') ?>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-4 control-label">Cara Pengolahan</label>
+					<div class="col-sm-12">
+						<input type="text" class="form-control" name="cara_pengolahan" placeholder="" value="<?= set_value('cara_pengolahan') ?>">
 					</div>
 				</div>
 
@@ -69,47 +90,6 @@
 					<div class="col-sm-offset-2 col-sm-12">
 						<button type="submit" class="btn btn-primary btn-sm">Save</button>
 						<a href="<?=base_url();?>index.php/home" class="btn btn-danger btn-sm">Kembali</a>
-					</div>
-				</div>
-
-
-			</div>
-
-			<div class="col-md-6">
-				<h1>Klasifikasi</h1>
-				<p></p>
-				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-4 control-label">Filum</label>
-					<div class="col-sm-12">
-						<input type="text" class="form-control" name="filum" placeholder="" value="<?= set_value('filum') ?>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-6 control-label">Kelas</label>
-					<div class="col-sm-12">
-						<input type="text" class="form-control" name="kelas" placeholder="" value="<?= set_value('kelas') ?>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-4 control-label">Ordo</label>
-					<div class="col-sm-12">
-						<input type="text" class="form-control" name="ordo" placeholder="" value="<?= set_value('ordo') ?>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-4 control-label">Family</label>
-					<div class="col-sm-12">
-						<input type="text" class="form-control" name="family" placeholder="" value="<?= set_value('family') ?>">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputEmail3" class="col-sm-4 control-label">Genus</label>
-					<div class="col-sm-12">
-						<input type="text" class="form-control" name="genus" placeholder="" value="<?= set_value('genus') ?>">
 					</div>
 				</div>
 

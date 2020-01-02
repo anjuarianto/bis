@@ -104,7 +104,8 @@ body {
 }
 
 .form-submissions {
-	padding-top: 50px
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 .form-submissions .control-label {
