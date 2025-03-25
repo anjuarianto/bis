@@ -1,0 +1,37 @@
+services:
+    php:
+        image: php56-apache:latest
+        ports:
+            - "88:80"
+        volumes:
+            - .:/var/www/html
+        networks:
+            - development
+        depends_on:
+            -   mysql
+
+    mysql:
+        image: mysql:5.7
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: baduy_bis
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
+        networks:
+            - development
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - "8080:80"
+        environment:
+            PMA_HOST: mysql
+        networks:
+            - development
+
+networks:
+    development:
+        name: development
+        external: true
