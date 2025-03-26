@@ -1,10 +1,8 @@
 services:
     php:
         image: php56-apache:latest
-        ports:
-            - "88:80"
         volumes:
-            - .:/var/www/html
+            - ./src:/var/www/html
         networks:
             - development
         depends_on:
@@ -23,7 +21,9 @@ services:
             development:
                 aliases:
                     - mysql
-
+        volumes:
+            - './data/mysql:/var/lib/mysql'
+    
     adminer:
         image: adminer
         ports:
@@ -33,5 +33,5 @@ services:
 
 networks:
     development:
-        name: development
+        name: npm_portainer
         external: true

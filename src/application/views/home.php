@@ -6,8 +6,6 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>Baduy Biodiversity | Home</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-   <script src="main.js"></script>
 
    <!-- open-iconic-bootstrap (icon set for bootstrap) -->
 	<link rel="stylesheet" href="<?=base_url();?>assets/icon/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
@@ -48,7 +46,6 @@
             <div class="container col-md-6 text-justify pb-4">
                <p>Urang Kanekes, Orang Kanekes atau Orang Baduy/Badui merupakan kelompok masyarakat adat suku Banten di wilayah Kabupaten Lebak, Banten. Populasi mereka sekitar 26.000 orang, dan mereka merupakan salah satu suku yang mengisolasi diri mereka dari dunia luar. Selain itu mereka juga memiliki keyakinan tabu untuk didokumentasikan, khususnya penduduk wilayah Baduy Dalam.</p>
                <p>Sebutan "Baduy" merupakan sebutan yang diberikan oleh penduduk luar kepada kelompok masyarakat tersebut, berawal dari sebutan para peneliti Belanda yang agaknya mempersamakan mereka dengan kelompok Arab Badawi yang merupakan masyarakat yang berpindah-pindah (nomaden). Kemungkinan lain adalah karena adanya Sungai Baduy dan Gunung Baduy yang ada di bagian utara dari wilayah tersebut. Mereka sendiri lebih suka menyebut diri sebagai urang Kanekes atau "orang Kanekes" sesuai dengan nama wilayah mereka, atau sebutan yang mengacu kepada nama kampung mereka seperti Urang Cibeo (Garna, 1993).</p>
-               <div><img class="gambar mb-3" src="https://i1.wp.com/www.romadecade.org/wp-content/uploads/2018/09/Suku-Baduy.jpg?w=750&ssl=1" alt=""></div>
                <p>Suku Baduy adalah masyarakat yang hidupnya sengaja mengasingkan diri dari masyarakat lain di sekitarnya tetapi bukan masyarakat suku terasing. Bahan pangan, sandang, dan papan mereka upayakan sendiri dari sumberdaya hutan yang ada di sekitar tempat tinggal mereka. Hutan dan alam sekitarnya merupakan sumber hidup dan kehidupan mereka; dijaga oleh sebuah sistem adat yang amat kuat dan merupakan juga batasan pola hidup mereka. Ketergantungan hidup itu tercermin dalam berbagai bentuk tatanan adat istiadat yang kuat dalam mengelola sumberdaya di lingkungannya</p>
                <p>Menurut penelitian Wardah, tercatat 163 jenis dari 49 suku yang meliputi 77 jenis pohon, 24 jenis terna, 18 jenis rumpun, 16 jenis perdu, 15 jenis liana, 9 jenis semak, 3 jenis herba, dan 1 jenis epifi. Sebanyak 46 jenis (29 %) berpotensi sebagai tanaman pangan, 38 jenis (23 %) sebagai tanaman obat, 25 jenis (15 %) sebagai bahan bakar, 17 jenis (10%) sebagai bahan bangunan, 8 jenis (5 %) untuk upacara ritual, 4 jenis (2 %) sebagai bahan kerajinan, 3 jenis (2%) berpotensi secara ekonomi, 1 jenis (1 %) untuk sumber bahan minuman, dan 14 jenis (13 %) untuk penggunaan lain-lain</p>
                <p>Berdasarkan penelitian tersebut perlu dibuat aplikasi untuk kepentingan pelestarian dan pemanfaatan keanekaragaman hayati pada hutan adat Suku Baduy ini maka perlu dikumpulkan seluruh data yang tersimpan dalam sebuah database dan dapat diakses oleh orang banyak pada waktu dan tempat dimana saja, untuk itu perlu dibangun dibangun aplikasi berbasis web yang mampu menampilkan informasi keanekaragaman hayati hutan adat Suku Baduy.</p>
@@ -105,8 +102,6 @@
    <script>
       window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
    </script>
-   <script src="../../assets/js/vendor/popper.min.js"></script>
-   <script src="../../dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
