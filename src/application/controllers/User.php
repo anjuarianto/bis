@@ -26,7 +26,7 @@ class User extends CI_Controller {
                 // if the username and password is a match
                 $this->session->set_userdata('username', $valid_user->username);
                 $this->session->set_userdata('level', $valid_user->level);
-                $this->session->set_userdata('status', login);
+                $this->session->set_userdata('status', 'login');
                 
                 switch($valid_user->level){
                     case 1 : //admin

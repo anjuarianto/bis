@@ -33,36 +33,36 @@
 			<div class="row">
 				<div class="col">
 					
-					<h1 class="display-4"><?=$detail->nama_ilmiah?></h1>
+					<h1 class="display-4"><?=$detail->nama_lokal?></h1>
 					<hr class="my-4">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-5">
-					<img class="img-detail" src="<?=$detail->gambar;?>" alt="">
+					<img class="img-detail" src="<?=$detail->nama_lokal;?>" alt="">
 				</div>
 				<div class="col-md-7 detail">
 					<div class="container">
 
-						<p><strong>Nama Lokal</strong> : <?=$detail->nama_lokal?></p>
+						<p><strong>Nama Ilmiah</strong> : <?=$detail->nama_ilmiah?></p>
 						<hr>
 
-						<p><strong>Family</strong> : <?=$detail->family?></p>
+						<p><strong>Family</strong> : <?=$detail->nama_lokal?></p>
 						<hr>
 
-						<p><strong>Fungsi Utama</strong> : <?=$detail->fungsi_utama?></p>
+						<p><strong>Fungsi Utama</strong> : <?=$detail->nama_lokal?></p>
 						<hr>
 
-						<p><strong>Fungsi Pendukung</strong> : <?=$detail->fungsi_pendukung?></p>
+						<p><strong>Fungsi Pendukung</strong> : <?=$detail->nama_lokal?></p>
 						<hr>
 
-						<p><strong>Penyakit yang dapat diobati</strong> : <?=$detail->penyakit?></p>
+						<p><strong>Penyakit yang dapat diobati</strong> : <?=$detail->nama_lokal?></p>
 						<hr>
 
-						<p><strong>Bagian Tumbuhan</strong> : <?=$detail->penyakit?></p>
+						<p><strong>Bagian Tumbuhan</strong> : <?=$detail->nama_lokal?></p>
 						<hr>
 
-						<p><strong>Cara Pengolahan</strong> : <?=$detail->penyakit?></p>
+						<p><strong>Cara Pengolahan</strong> : <?=$detail->nama_lokal?></p>
 					</div>
 					
 				</div>			

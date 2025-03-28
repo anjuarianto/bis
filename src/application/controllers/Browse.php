@@ -9,11 +9,8 @@ class Browse extends CI_Controller {
 		
 	}
 
-	public function index() {
-
-		$this->load->library('pagination');
-
-		$config['base_url'] = 'http://localhost/bis/index.php/browse/index';
+	private function pagination_config() {
+		$config['base_url'] = base_url('/index.php/browse/index');
 		$config['total_rows'] = $this->db->get('tumbuhan')->num_rows();
 		$config['per_page'] = 12;
 		$config['num_links'] = 2;
@@ -38,26 +35,40 @@ class Browse extends CI_Controller {
 
 		$this->pagination->initialize($config);
 
-		$data['tumbuhan'] = $this->db->get('tumbuhan', $config['per_page'], $this->uri->segment(3))->result();
+		return $config;
+
+	}
+
+	public function index() {
+
+		$this->load->library('pagination');
+
+		$pagination_config = $this->pagination_config();
+
+		
+		$data['tumbuhan'] = $this->db->get('tumbuhan', $pagination_config['per_page'], $this->uri->segment(3))->result();
 
 		$data['pagination'] =  $this->pagination->create_links();
 		$data['message'] = "";
+		
 		$this->load->view('v_browse', $data);
 	}
 
 	public function detail($id) {
 		// $id = $this->uri->segment(3);
 		$data['detail'] = $this->model_tumbuhan->detail($id);
+
+		if(!$data['detail']) {
+			show_error('Request yang anda berikan tidak dapat ditemukan...', 404, 'Not Found');
+		}
+
 		$this->load->view('detail', $data);
 	}
 
-	public function search($search_keyword = null)
+	public function search()
     {
-		if($search_keyword === null) {
-			redirect(base_url().'index.php/browse/search/'.$this->input->post('keyword'));
+		$keyword = $this->input->get('keyword');
 		
-		}
-		$keyword = $this->uri->segment('3');
 		$this->load->library('pagination');
 
 		$config['per_page'] = 12;
@@ -67,10 +78,6 @@ class Browse extends CI_Controller {
 		$config['total_rows'] = $data['tumbuhan'] = $this->db->or_like(array('nama_lokal' => $keyword, 'nama_ilmiah' => $keyword))
 									 ->get('tumbuhan')->num_rows();
 
-		
-
-		// print($config['total_rows']);
-		// die;
 		
 		
 		$config['full_tag_open'] = '<ul class="pagination justify-content-end" style="padding-top:40px;">';

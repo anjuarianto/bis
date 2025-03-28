@@ -37,43 +37,44 @@
          </div>
       </div>
 
-      <div class="isi container-fluid">
-         <div class="row justify-content-center">
-            <div class="container text-center pt-4">
-               <h1>Suku Baduy</h1>
-               <hr>
-            </div>
-            <div class="container col-md-6 text-justify pb-4">
-               <p>Urang Kanekes, Orang Kanekes atau Orang Baduy/Badui merupakan kelompok masyarakat adat suku Banten di wilayah Kabupaten Lebak, Banten. Populasi mereka sekitar 26.000 orang, dan mereka merupakan salah satu suku yang mengisolasi diri mereka dari dunia luar. Selain itu mereka juga memiliki keyakinan tabu untuk didokumentasikan, khususnya penduduk wilayah Baduy Dalam.</p>
-               <p>Sebutan "Baduy" merupakan sebutan yang diberikan oleh penduduk luar kepada kelompok masyarakat tersebut, berawal dari sebutan para peneliti Belanda yang agaknya mempersamakan mereka dengan kelompok Arab Badawi yang merupakan masyarakat yang berpindah-pindah (nomaden). Kemungkinan lain adalah karena adanya Sungai Baduy dan Gunung Baduy yang ada di bagian utara dari wilayah tersebut. Mereka sendiri lebih suka menyebut diri sebagai urang Kanekes atau "orang Kanekes" sesuai dengan nama wilayah mereka, atau sebutan yang mengacu kepada nama kampung mereka seperti Urang Cibeo (Garna, 1993).</p>
-               <p>Suku Baduy adalah masyarakat yang hidupnya sengaja mengasingkan diri dari masyarakat lain di sekitarnya tetapi bukan masyarakat suku terasing. Bahan pangan, sandang, dan papan mereka upayakan sendiri dari sumberdaya hutan yang ada di sekitar tempat tinggal mereka. Hutan dan alam sekitarnya merupakan sumber hidup dan kehidupan mereka; dijaga oleh sebuah sistem adat yang amat kuat dan merupakan juga batasan pola hidup mereka. Ketergantungan hidup itu tercermin dalam berbagai bentuk tatanan adat istiadat yang kuat dalam mengelola sumberdaya di lingkungannya</p>
-               <p>Menurut penelitian Wardah, tercatat 163 jenis dari 49 suku yang meliputi 77 jenis pohon, 24 jenis terna, 18 jenis rumpun, 16 jenis perdu, 15 jenis liana, 9 jenis semak, 3 jenis herba, dan 1 jenis epifi. Sebanyak 46 jenis (29 %) berpotensi sebagai tanaman pangan, 38 jenis (23 %) sebagai tanaman obat, 25 jenis (15 %) sebagai bahan bakar, 17 jenis (10%) sebagai bahan bangunan, 8 jenis (5 %) untuk upacara ritual, 4 jenis (2 %) sebagai bahan kerajinan, 3 jenis (2%) berpotensi secara ekonomi, 1 jenis (1 %) untuk sumber bahan minuman, dan 14 jenis (13 %) untuk penggunaan lain-lain</p>
-               <p>Berdasarkan penelitian tersebut perlu dibuat aplikasi untuk kepentingan pelestarian dan pemanfaatan keanekaragaman hayati pada hutan adat Suku Baduy ini maka perlu dikumpulkan seluruh data yang tersimpan dalam sebuah database dan dapat diakses oleh orang banyak pada waktu dan tempat dimana saja, untuk itu perlu dibangun dibangun aplikasi berbasis web yang mampu menampilkan informasi keanekaragaman hayati hutan adat Suku Baduy.</p>
-            </div>
-         </div>
+		<div class="container-fluid p-2 my-5">
+			<h1 class="text-center mb-3">Suku Baduy</h1>
+			<div class="row d-flex justify-content-center">
+				<div class="col-md-6">
+				<hr>
+					<div class="text-justify">
+						<p>Urang Kanekes, Orang Kanekes atau Orang Baduy/Badui merupakan kelompok masyarakat adat suku Banten di wilayah Kabupaten Lebak, Banten. Populasi mereka sekitar 26.000 orang, dan mereka merupakan salah satu suku yang mengisolasi diri mereka dari dunia luar. Selain itu mereka juga memiliki keyakinan tabu untuk didokumentasikan, khususnya penduduk wilayah Baduy Dalam.</p>
+						<p>Sebutan "Baduy" merupakan sebutan yang diberikan oleh penduduk luar kepada kelompok masyarakat tersebut, berawal dari sebutan para peneliti Belanda yang agaknya mempersamakan mereka dengan kelompok Arab Badawi yang merupakan masyarakat yang berpindah-pindah (nomaden). Kemungkinan lain adalah karena adanya Sungai Baduy dan Gunung Baduy yang ada di bagian utara dari wilayah tersebut. Mereka sendiri lebih suka menyebut diri sebagai urang Kanekes atau "orang Kanekes" sesuai dengan nama wilayah mereka, atau sebutan yang mengacu kepada nama kampung mereka seperti Urang Cibeo (Garna, 1993).</p>
+						<p>Suku Baduy adalah masyarakat yang hidupnya sengaja mengasingkan diri dari masyarakat lain di sekitarnya tetapi bukan masyarakat suku terasing. Bahan pangan, sandang, dan papan mereka upayakan sendiri dari sumberdaya hutan yang ada di sekitar tempat tinggal mereka. Hutan dan alam sekitarnya merupakan sumber hidup dan kehidupan mereka; dijaga oleh sebuah sistem adat yang amat kuat dan merupakan juga batasan pola hidup mereka. Ketergantungan hidup itu tercermin dalam berbagai bentuk tatanan adat istiadat yang kuat dalam mengelola sumberdaya di lingkungannya</p>
+						<p>Menurut penelitian Wardah, tercatat 163 jenis dari 49 suku yang meliputi 77 jenis pohon, 24 jenis terna, 18 jenis rumpun, 16 jenis perdu, 15 jenis liana, 9 jenis semak, 3 jenis herba, dan 1 jenis epifi. Sebanyak 46 jenis (29 %) berpotensi sebagai tanaman pangan, 38 jenis (23 %) sebagai tanaman obat, 25 jenis (15 %) sebagai bahan bakar, 17 jenis (10%) sebagai bahan bangunan, 8 jenis (5 %) untuk upacara ritual, 4 jenis (2 %) sebagai bahan kerajinan, 3 jenis (2%) berpotensi secara ekonomi, 1 jenis (1 %) untuk sumber bahan minuman, dan 14 jenis (13 %) untuk penggunaan lain-lain</p>
+						<p>Berdasarkan penelitian tersebut perlu dibuat aplikasi untuk kepentingan pelestarian dan pemanfaatan keanekaragaman hayati pada hutan adat Suku Baduy ini maka perlu dikumpulkan seluruh data yang tersimpan dalam sebuah database dan dapat diakses oleh orang banyak pada waktu dan tempat dimana saja, untuk itu perlu dibangun dibangun aplikasi berbasis web yang mampu menampilkan informasi keanekaragaman hayati hutan adat Suku Baduy.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-         <div class="row justify-content-center bg-light pt-4 pb-5">
-            <div class="container text-center judul-fitur">
-               <h1 class="text-success">Fitur <span class="text-dark">Web</span></h1>
-               <hr>
-            </div>
-               <div class="col-md-3 card text-center p-4 mr-5">
-                  <h5>Pencarian</h5>
-                  <hr>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt iste numquam veritatis nemo mollitia illo, id harum assumenda quo facilis deserunt. Ab perferendis natus vel nisi quasi neque! Aspernatur, assumenda?</p>
-                  <span class="oi oi-magnifying-glass pb-4"></span>
-                  <a href="<?=base_url();?>index.php/browse" class="btn btn-success">Lihat..</a>
-               </div>
-               <div class="col-md-3 card text-center p-4 ml-5">
-                  <h5>Pengajuan Data</h5>
-                  <hr>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis ratione quaerat, eius quasi distinctio error hic perspiciatis iusto harum consectetur ullam laboriosam blanditiis eligendi repudiandae quibusdam cum dolorem voluptate in.</p>
-                  <span class="oi oi-file pb-4"></span>
-                  <a href="<?=base_url()?>index.php/submissions" class="btn btn-success">Lihat..</a>
-               </div>
-         </div>
-
-      </div>
+		<div class="container mb-5">
+			<div class="row d-flex justify-content-center">
+				<div class="col-md text-center">
+					<div class="card p-4 mx-2">
+						<h5>Pencarian</h5>
+						<hr>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt iste numquam veritatis nemo mollitia illo, id harum assumenda quo facilis deserunt. Ab perferendis natus vel nisi quasi neque! Aspernatur, assumenda?</p>
+						<span class="oi oi-magnifying-glass pb-4"></span>
+						<a href="<?=base_url();?>index.php/browse" class="btn btn-success">Lihat..</a>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="card text-center p-4 mx-2">
+						<h5>Pengajuan Data</h5>
+						<hr>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis ratione quaerat, eius quasi distinctio error hic perspiciatis iusto harum consectetur ullam laboriosam blanditiis eligendi repudiandae quibusdam cum dolorem voluptate in.</p>
+						<span class="oi oi-file pb-4"></span>
+						<a href="<?=base_url()?>index.php/submissions" class="btn btn-success">Lihat..</a>
+					</div>
+				</div>
+			</div>
+		</div>
       
    </main>
 
@@ -88,8 +89,10 @@
                 </div>
                 <div class="col-3">
                     <h5>Fitur</h5>
-                    <p>Pencarian</p>
-                    <p>Pengajuan Data</p>
+						  <ul style="list-style-type: none; padding:0" >
+							<li><a href="<?= base_url('index.php/browse') ?>" style="text-decoration:none; color:white;">Pencarian</a></li>
+						  	<li><a href="<?= base_url('index.php/submission') ?>" style="text-decoration:none; color:white;">Pengajuan Data</a></li>
+						  </ul>
                 </div>
             </div>
         </div>

@@ -10,13 +10,13 @@
    <script src="main.js"></script>
 
    <!-- open-iconic-bootstrap (icon set for bootstrap) -->
-   <link rel="stylesheet" href="<?=base_url();?>assets/icon/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+   <link rel="stylesheet" href="<?= base_url(); ?>assets/icon/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
 
    <!-- Bootstrap -->
-   <link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css">
 
    <!-- User Css -->
-   <link rel="stylesheet" href="<?=base_url();?>assets/user.css">
+   <link rel="stylesheet" href="<?= base_url(); ?>assets/user.css">
 
    <!-- Font -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto|Roboto+Condensed" rel="stylesheet">
@@ -27,39 +27,40 @@
 <body>
 <?php $this->load->view('navbar'); ?>
 
-   <main role="main" class="bg-light">
+   <main role="main" class="bg-light" style="height: 100vh">
 
    <!-- Container -->
       <div class="container card-view">
 
-      <form action="<?=base_url();?>index.php/browse/search/" method="post">
-      <div class="input-group pt-3">
-         <input type="text" class="form-control" name="keyword" placeholder="Kata kunci..." aria-label="Recipient's username" aria-describedby="button-addon2">
-         <div class="input-group-append" >
-            <input class="btn btn-outline-success" type="submit" value="Cari" id="button-addon2" />
-         </div>
-      </div>
+      <form action="" method="GET">
+			<div class="input-group pt-3">
+				<input type="text" class="form-control" name="keyword" placeholder="Kata kunci..." value="<?= $this->input->get('keyword') ?>">
+				<div class="input-group-append" >
+					<input class="btn btn-outline-success" type="submit" value="Cari" />
+				</div>
+			</div>
       </form>
+   
       
-      
-      
-         <div class="row">
-            <?php foreach($tumbuhan as $t ) : ?>
-
-            <div class="col-md-3" >
-               <a href="<?=base_url();?>index.php/browse/detail/<?=$t->id;?>">
-                  <div class="card">
-                     <img class="img-canvas img-thumbnail" src="<?=$t->gambar;?>" alt="Card image cap">
-                     <div class="card-body">
-                        <p class="card-title"><strong><?=$t->nama_lokal?></strong></p>
-                        <p class="card-text"><?=$t->nama_ilmiah?></p>
-                     </div>
-                  </div>
-               </a>
-            </div>
-            <?php endforeach; ?>
-               
-         </div>
+		<div class="row">
+			<?php if (count($tumbuhan) > 0): ?>
+			<?php foreach ($tumbuhan as $t): ?>
+			<div class="col-md-3">
+				<a href="<?= base_url(); ?>index.php/browse/detail/<?= $t->id; ?>">
+					<div class="card">
+						<img class="img-canvas img-thumbnail" src="<?= $t->gambar; ?>" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-title"><strong><?= $t->nama_lokal ?></strong></p>
+							<p class="card-text"><?= $t->nama_ilmiah ?></p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<?php endforeach; ?>
+			<?php else: ?>
+				<p class="p-3">Data tidak ditemukan...</p>
+			<?php endif; ?>
+		</div>
        
        <?php echo $pagination; ?>
        
