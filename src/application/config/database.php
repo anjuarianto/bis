@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql',
-	'username' => 'root',
-	'password' => 'root',
+	'hostname' => 'bis.mysql',
+	'username' => 'user',
+	'password' => 'password',
 	'database' => 'baduy_bis',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

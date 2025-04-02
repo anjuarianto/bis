@@ -28,10 +28,15 @@ RUN docker-php-ext-install pdo_mysql \
     json
 
 # Copy your application code into the container
-COPY . /var/www/html
+COPY ./src /var/www/html
 
 # Set the working directory in the container
 WORKDIR /var/www/html
+
+# RUN a2enmod rewrite
+# Enable Apache modules
+RUN a2enmod rewrite
+
 
 # Install Composer if needed
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

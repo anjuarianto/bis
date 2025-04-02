@@ -8,14 +8,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <!-- open-iconic-bootstrap (icon set for bootstrap) -->
-	<link rel="stylesheet" href="<?=base_url();?>assets/icon/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="<?=base_url('assets/icon/css/open-iconic-bootstrap.min.css');?>" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
 
 
    <!-- Bootstrap -->
-   <link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css');?>">
 
    <!-- User Css -->
-   <link rel="stylesheet" href="<?=base_url();?>assets/jumbotron.css">
+   <link rel="stylesheet" href="<?=base_url('assets/jumbotron.css');?>">
 
    <!-- Font -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto|Roboto+Condensed" rel="stylesheet">
